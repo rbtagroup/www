@@ -752,6 +752,45 @@
     gap: 6px;
   }
 
+  /* Service card badges (price, time, info) */
+  .service-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(52, 209, 134, 0.12);
+    color: var(--accent);
+    padding: 4px 8px;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: 'Geist Mono', monospace;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+    border: 1px solid rgba(52, 209, 134, 0.2);
+  }
+
+  .service-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .service-features span {
+    font-size: 11px;
+    color: var(--ink-soft);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 4px 10px;
+    border-radius: 100px;
+    border: 1px solid var(--line);
+  }
+
+  .service-features span::before {
+    content: '✓ ';
+    color: var(--accent);
+    font-weight: 700;
+  }
+
   /* ============ MAP SECTION ============ */
   .map-section {
     background: var(--bg-elev);
@@ -871,6 +910,52 @@
     margin-top: 4px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
+  }
+
+  /* ============ WHY US ============ */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .why-item {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .why-icon-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(52, 209, 134, 0.12);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(52, 209, 134, 0.2);
+  }
+
+  .why-icon-box svg { width: 20px; height: 20px; }
+
+  .why-text h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+
+  .why-text p {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
   }
 
   /* ============ STEPS ============ */
@@ -1275,6 +1360,11 @@
       gap: 16px;
     }
 
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
     .reviews-scroll {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1356,7 +1446,7 @@
   <div class="hero-content">
     <div class="hero-tag">VOZY ONLINE · ~5 MIN PŘÍJEZD</div>
     <h1>Taxi v Hodoníně.<br><span class="accent">Kdykoliv.</span></h1>
-    <p>Spolehlivá taxislužba 24/7. Stačí jeden telefonát.</p>
+    <p>Více než 4 roky vozíme Hodonín a okolí — ve dne v noci, na svatby, na letiště, do nemocnice. Bez aplikací. Bez registrací. Jeden telefonát.</p>
     <div class="hero-cta">
       <a href="tel:+420777702702" class="btn btn-primary">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.58l2.2-2.21c.28-.27.36-.66.25-1.01C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
@@ -1371,9 +1461,9 @@
 </section>
 
 <section class="phone-section reveal">
-  <span class="section-tag">Vaše appka v telefonu</span>
-  <h2>Sledujte řidiče<br><span class="accent">v reálném čase.</span></h2>
-  <p class="section-sub">SMS notifikace o přidělení vozu, čase příjezdu i příjezdu na místo. Bez aplikací zdarma.</p>
+  <span class="section-tag">Bez aplikací</span>
+  <h2>Vždy víte<br><span class="accent">co se děje.</span></h2>
+  <p class="section-sub">Po objednávce dostanete SMS s detaily jízdy. Při příjezdu řidiče druhou SMS. Nic neinstalujete, neregistrujete se.</p>
 
   <div class="phone-stage" id="phoneStage">
     <div class="phone-3d" id="phone3d">
@@ -1487,7 +1577,7 @@
 <section class="reveal">
   <span class="section-tag">Naše služby</span>
   <h2>Vše pod jedním<br><span class="accent">číslem.</span></h2>
-  <p class="section-sub">Klasické taxi, letiště, firemní jízdy i Senior Taxi.</p>
+  <p class="section-sub">Od krátké jízdy po městě po cestu na letiště. Ať potřebujete kamkoliv, máme vůz připravený.</p>
 
   <div class="services-grid">
     <a href="tel:+420777702702" class="service-card">
@@ -1495,9 +1585,15 @@
       <div class="service-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
       </div>
+      <div class="service-badge">~ 5 MIN PŘÍJEZD</div>
       <h3>Taxi po městě</h3>
-      <p>Spolehlivý dopravní společník pro každý den v Hodoníně a okolí.</p>
-      <span class="service-arrow">Volat →</span>
+      <p>Klasická taxi služba pro Hodonín a okolí. Rychle, čistě, za rozumnou cenu — kdykoliv potřebujete kamkoliv.</p>
+      <div class="service-features">
+        <span>24/7</span>
+        <span>Platba kartou</span>
+        <span>Rychlý příjezd</span>
+      </div>
+      <span class="service-arrow">Volat 777 702 702 →</span>
     </a>
 
     <a href="tel:+420777702702" class="service-card">
@@ -1505,49 +1601,111 @@
       <div class="service-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
       </div>
+      <div class="service-badge">FIXNÍ CENA</div>
       <h3>Letištní transfery</h3>
-      <p>Vídeň, Praha, Bratislava. Vyzvedneme včas, bez stresu.</p>
-      <span class="service-arrow">Volat →</span>
+      <p>Vídeň, Praha, Bratislava i Brno. Sledujeme váš let — když máte zpoždění, vyzvedneme vás později. Bez příplatku.</p>
+      <div class="service-features">
+        <span>Sledování letu</span>
+        <span>Velký kufr</span>
+        <span>Předem domluvená cena</span>
+      </div>
+      <span class="service-arrow">Volat 777 702 702 →</span>
     </a>
 
     <a href="tel:+420777702702" class="service-card">
       <span class="service-num">/ 03</span>
       <div class="service-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V9l6 4-6 4z" fill="currentColor"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-4M12 22v-5M9 12h6M9 17l3 5 3-5"/></svg>
       </div>
+      <div class="service-badge">PLATBA NA FAKTURU</div>
       <h3>Firemní taxi</h3>
-      <p>Dochvilnost a profesionalita. Možnost platby na fakturu.</p>
-      <span class="service-arrow">Volat →</span>
+      <p>Pro firmy a klienty. Měsíční vyúčtování s detailem každé jízdy, dochvilnost, profesionální vystupování řidičů.</p>
+      <div class="service-features">
+        <span>Faktura</span>
+        <span>Pravidelné jízdy</span>
+        <span>Reprezentativní vozy</span>
+      </div>
+      <span class="service-arrow">Domluvit spolupráci →</span>
     </a>
 
     <a href="tel:+420777702702" class="service-card">
       <span class="service-num">/ 04</span>
       <div class="service-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </div>
+      <div class="service-badge">ZVÝHODNĚNÁ CENA</div>
       <h3>Senior Taxi</h3>
-      <p>Zvýhodněná cena za km. Trpěliví řidiči, pomoc s nástupem.</p>
-      <span class="service-arrow">Volat →</span>
+      <p>Speciální tarif pro seniory. Trpěliví řidiči, pomoc s nástupem i taškami, doprovod k lékaři nebo na nákup.</p>
+      <div class="service-features">
+        <span>Nižší cena za km</span>
+        <span>Pomoc s nástupem</span>
+        <span>K lékaři</span>
+      </div>
+      <span class="service-arrow">Volat 777 702 702 →</span>
     </a>
 
     <a href="tel:+420777702702" class="service-card">
       <span class="service-num">/ 05</span>
       <div class="service-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8M12 2v6M5 8h14l-2 13H7L5 8zM9 13h6"/></svg>
       </div>
+      <div class="service-badge">VČETNĚ VAŠEHO AUTA</div>
       <h3>Drink &amp; Drive</h3>
-      <p>Po oslavě vás i vaše auto bezpečně dopravíme domů.</p>
-      <span class="service-arrow">Volat →</span>
+      <p>Po oslavě, svatbě nebo večírku odvezeme bezpečně domů — vás i vaše auto. Náš řidič odveze vás, druhý vaše vozidlo.</p>
+      <div class="service-features">
+        <span>2 řidiči</span>
+        <span>Vaše auto domů</span>
+        <span>Bez stresu</span>
+      </div>
+      <span class="service-arrow">Volat 777 702 702 →</span>
     </a>
 
     <a href="tel:+420777702702" class="service-card">
       <span class="service-num">/ 06</span>
       <div class="service-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
       </div>
+      <div class="service-badge">SMS RODIČŮM</div>
       <h3>Bezpečně do školy</h3>
-      <p>Odvoz dětí na kroužky a do školy. SMS o příjezdu rodičům.</p>
-      <span class="service-arrow">Volat →</span>
+      <p>Pravidelný odvoz dětí do školy a na kroužky. Prověření řidiči, dětské sedačky, SMS rodičům při vyzvednutí i příjezdu.</p>
+      <div class="service-features">
+        <span>Dětské sedačky</span>
+        <span>SMS notifikace</span>
+        <span>Stálý řidič</span>
+      </div>
+      <span class="service-arrow">Domluvit odvoz →</span>
+    </a>
+
+    <a href="tel:+420777702702" class="service-card">
+      <span class="service-num">/ 07</span>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V8L12 3l7 5v13M9 21V12h6v9"/></svg>
+      </div>
+      <div class="service-badge">VIP SLUŽBA</div>
+      <h3>Svatby &amp; eventy</h3>
+      <p>Pro výjimečné dny výjimečné vozy. Svatby, plesy, firemní akce — řidič v obleku, čisté vozy, dochvilnost na minutu.</p>
+      <div class="service-features">
+        <span>Reprezentativní vůz</span>
+        <span>Řidič v obleku</span>
+        <span>Předem domluveno</span>
+      </div>
+      <span class="service-arrow">Domluvit termín →</span>
+    </a>
+
+    <a href="tel:+420777702702" class="service-card">
+      <span class="service-num">/ 08</span>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1M16 8h5l2 3v5h-7zM6.5 19.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM18.5 19.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></svg>
+      </div>
+      <div class="service-badge">RYCHLE A LEVNĚ</div>
+      <h3>Kurýrní služby</h3>
+      <p>Doručíme dokumenty, balíky i zapomenuté klíče po Hodoníně i v rámci regionu. Rychleji než klasická pošta.</p>
+      <div class="service-features">
+        <span>Hodonín a okolí</span>
+        <span>Do 1 hodiny</span>
+        <span>SMS o doručení</span>
+      </div>
+      <span class="service-arrow">Volat 777 702 702 →</span>
     </a>
   </div>
 </section>
@@ -1556,7 +1714,7 @@
   <div class="map-section reveal">
     <span class="section-tag">Pokrytí regionu</span>
     <h2>Hodonín a okolí,<br><span class="accent">na dosah.</span></h2>
-    <p class="section-sub">Břeclav, Kyjov, Strážnice, Veselí n. Moravou — i přes hranice.</p>
+    <p class="section-sub">Břeclav, Kyjov, Strážnice, Veselí n. Moravou. Vozíme i přes hranice — Skalica, Holíč, slovenské obce. Letiště Vídeň, Bratislava, Brno, Praha.</p>
 
     <div class="map-3d-stage">
       <div class="map-3d" id="map3d">
@@ -1591,29 +1749,98 @@
 </section>
 
 <section class="reveal">
+  <span class="section-tag">Proč RB Taxi</span>
+  <h2>To, co dělá<br><span class="accent">rozdíl.</span></h2>
+  <p class="section-sub">Taxi má každý. My se snažíme, abyste se k nám chtěli vrátit.</p>
+
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="why-text">
+        <h4>Skutečně 24/7</h4>
+        <p>Půlnoc, ráno, svátky — vždy někdo zvedne. Žádné automatické odpovědi, žádné čekání.</p>
+      </div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="why-text">
+        <h4>Lokální řidiči</h4>
+        <p>Naši řidiči jsou z Hodonína a okolí. Znají každou ulici, každý zkratku, každý dům.</p>
+      </div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+      </div>
+      <div class="why-text">
+        <h4>Platba kartou v každém autě</h4>
+        <p>Karta, hotovost nebo na fakturu. Vyberete si vy. Bez stresu, kdyby vám došla hotovost.</p>
+      </div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="why-text">
+        <h4>Prověření řidiči</h4>
+        <p>Trestní bezúhonnost, čistý alkoholový rejstřík, profesionální vystupování. Bezpečně dovezeme i děti.</p>
+      </div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+      </div>
+      <div class="why-text">
+        <h4>Čisté a moderní vozy</h4>
+        <p>Vozový park kontrolujeme denně. Nekuřácká auta, klimatizace, vůně, dětské sedačky na vyžádání.</p>
+      </div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div class="why-text">
+        <h4>SMS o příjezdu</h4>
+        <p>Po objednávce dostanete SMS s detaily řidiče. Při příjezdu druhou. Víte, na čem jste.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
   <span class="section-tag">Jak to funguje</span>
   <h2>Tři kroky <span class="accent">k jízdě.</span></h2>
+  <p class="section-sub">Bez aplikace, bez registrace. Stačí zavolat — všechno ostatní vyřešíme my.</p>
 
   <div class="steps-list">
     <div class="step">
       <div class="step-num">01</div>
       <div class="step-content">
-        <h4>Zavolejte</h4>
-        <p>+420 777 702 702 nebo přes online formulář. Potvrzeno během chvilky.</p>
+        <h4>Zavolejte nebo rezervujte online</h4>
+        <p>Stačí říct kde jste a kam potřebujete. Cenu sdělíme předem — žádná překvapení. Pro plánované jízdy použijte online formulář.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">02</div>
       <div class="step-content">
-        <h4>Přijde SMS</h4>
-        <p>Dozvíte se, který vůz pro vás jede a za jak dlouho dorazí.</p>
+        <h4>Dostanete potvrzení SMS</h4>
+        <p>Pošleme jméno řidiče, model vozu, SPZ a přesný čas příjezdu. Když řidič dorazí na místo, dostanete druhou SMS.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">03</div>
       <div class="step-content">
-        <h4>Cestujte</h4>
-        <p>Plaťte kartou, hotově nebo na fakturu. Bez složitostí.</p>
+        <h4>Pohodlně cestujte</h4>
+        <p>Klimatizovaný vůz, zdarma Wi-Fi, platba kartou v každém autě. Hotovost ani fakturu — vyberete si, co vám vyhovuje.</p>
       </div>
     </div>
   </div>
@@ -1634,34 +1861,45 @@
   <div class="reviews-scroll">
     <div class="review">
       <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Pravidelně jezdím na letiště do Vídně. Vždy přesní, ceny férové, řidiči milí."</p>
+      <p class="review-text">"Jezdím na letiště do Vídně každý měsíc. Čas příjezdu na minutu, fixní cena, čisté auto. Mnohem levnější než parkování."</p>
       <div class="review-meta">
         <div class="review-avatar">TM</div>
         <div>
           <div class="review-name">Tomáš M.</div>
-          <div class="review-route">HODONÍN → VÍDEŇ</div>
+          <div class="review-route">HODONÍN → LETIŠTĚ VÍDEŇ</div>
         </div>
       </div>
     </div>
     <div class="review">
       <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Volala jsem v noci ze Strážnice — auto za 12 minut, řidič bezpečně dovezl domů."</p>
+      <p class="review-text">"Volala jsem ve 2 ráno ze Strážnice domů. Auto za 15 minut, řidič profesionál, cena férová. Klobouk dolů — perfektní služba."</p>
       <div class="review-meta">
         <div class="review-avatar">MP</div>
         <div>
           <div class="review-name">Markéta P.</div>
-          <div class="review-route">STRÁŽNICE → HODONÍN</div>
+          <div class="review-route">NOČNÍ JÍZDA · STRÁŽNICE → HODONÍN</div>
         </div>
       </div>
     </div>
     <div class="review">
       <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Využíváme jako firma — taxi na fakturu, vždy přesně na čas. Klienti spokojeni."</p>
+      <p class="review-text">"Využíváme jako firma už dva roky. Pravidelné odvozy klientů, faktury vždy včas, řidiči reprezentativní. Bez chyby."</p>
       <div class="review-meta">
         <div class="review-avatar">JK</div>
         <div>
           <div class="review-name">Jana K.</div>
-          <div class="review-route">FIREMNÍ DOPRAVA</div>
+          <div class="review-route">FIREMNÍ DOPRAVA · 2 ROKY</div>
+        </div>
+      </div>
+    </div>
+    <div class="review">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Vozí naši babičku k lékaři každý týden. Trpěliví, vždy pomohou s nástupem, počkají na ni u ordinace. Skvělý přístup."</p>
+      <div class="review-meta">
+        <div class="review-avatar">LŠ</div>
+        <div>
+          <div class="review-name">Lucie Š.</div>
+          <div class="review-route">SENIOR TAXI · K LÉKAŘI</div>
         </div>
       </div>
     </div>
@@ -1713,9 +1951,12 @@
       <ul>
         <li><a href="tel:+420777702702">Taxi po městě</a></li>
         <li><a href="tel:+420777702702">Letištní transfery</a></li>
-        <li><a href="tel:+420777702702">Firemní doprava</a></li>
+        <li><a href="tel:+420777702702">Firemní taxi</a></li>
         <li><a href="tel:+420777702702">Senior Taxi</a></li>
         <li><a href="tel:+420777702702">Drink &amp; Drive</a></li>
+        <li><a href="tel:+420777702702">Bezpečně do školy</a></li>
+        <li><a href="tel:+420777702702">Svatby &amp; eventy</a></li>
+        <li><a href="tel:+420777702702">Kurýrní služby</a></li>
         <li><a href="https://rbweb.esol.cz/" target="_blank" rel="noopener">Online rezervace</a></li>
       </ul>
     </div>
