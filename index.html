@@ -958,6 +958,123 @@
     line-height: 1.5;
   }
 
+  /* ============ APP DOWNLOAD SECTION ============ */
+  .app-section {
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-elev) 100%);
+    border-radius: 32px;
+    margin: 0 12px;
+    padding: 48px 24px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+
+  .app-section::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(52, 209, 134, 0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .app-features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 28px 0;
+  }
+
+  .app-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .app-feature-check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-weight: 800;
+    font-size: 12px;
+  }
+
+  .app-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .app-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color 0.3s, transform 0.2s;
+  }
+
+  .app-btn:active {
+    transform: scale(0.98);
+    border-color: var(--accent);
+  }
+
+  .app-btn-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    color: var(--ink);
+  }
+
+  .app-btn-text {
+    flex: 1;
+  }
+
+  .app-btn-label {
+    font-size: 10px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+
+  .app-btn-store {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 1px;
+    letter-spacing: -0.01em;
+  }
+
+  .app-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  .app-rating-stars {
+    color: var(--warn);
+    letter-spacing: 1px;
+    font-size: 14px;
+  }
+
   /* ============ STEPS ============ */
   .steps-list {
     margin-top: 28px;
@@ -1365,6 +1482,26 @@
       gap: 16px;
     }
 
+    .app-section {
+      padding: 64px 48px;
+    }
+
+    .app-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .app-buttons {
+      flex-direction: row;
+      max-width: 500px;
+    }
+
+    .app-btn {
+      flex: 1;
+    }
+
     .reviews-scroll {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1384,8 +1521,8 @@
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 40px;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+      gap: 32px;
     }
     .footer-section { border-top: none; padding: 0; }
   }
@@ -1504,6 +1641,113 @@
     <div class="float-tag t-1">SMS notifikace</div>
     <div class="float-tag t-2">Platba kartou</div>
     <div class="float-tag t-3">~5 min příjezd</div>
+  </div>
+</section>
+
+<!-- APP DOWNLOAD SECTION -->
+<section style="padding: 0 0 60px;">
+  <div class="app-section reveal">
+    <div class="app-content-grid">
+      <div>
+        <span class="section-tag">Mobilní aplikace</span>
+        <h2>Objednejte si taxi <span class="accent">jedním ťuknutím.</span></h2>
+        <p class="section-sub">Stáhněte si naši aplikaci a objednejte si jízdu rychleji než kdy dřív. Bez čekání na dispečink.</p>
+
+        <div class="app-features">
+          <div class="app-feature">
+            <span class="app-feature-check">✓</span>
+            <span>Online objednávka rovnou do vozu řidiče</span>
+          </div>
+          <div class="app-feature">
+            <span class="app-feature-check">✓</span>
+            <span>Vždy předem známá cena za jízdu</span>
+          </div>
+          <div class="app-feature">
+            <span class="app-feature-check">✓</span>
+            <span>Sledování polohy vozu v reálném čase</span>
+          </div>
+          <div class="app-feature">
+            <span class="app-feature-check">✓</span>
+            <span>Účtenky a historie jízd v aplikaci</span>
+          </div>
+          <div class="app-feature">
+            <span class="app-feature-check">✓</span>
+            <span>VIP účet — body měníte za vouchery</span>
+          </div>
+        </div>
+
+        <div class="app-buttons">
+          <a href="https://apps.apple.com/cz/app/rb-taxi-hodon%C3%ADn/id1512733655" target="_blank" rel="noopener" class="app-btn">
+            <svg class="app-btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+            <div class="app-btn-text">
+              <div class="app-btn-label">Stáhnout pro</div>
+              <div class="app-btn-store">App Store</div>
+            </div>
+          </a>
+
+          <a href="https://play.google.com/store/apps/details?id=cz.esol.RbTaxi" target="_blank" rel="noopener" class="app-btn">
+            <svg class="app-btn-icon" viewBox="0 0 24 24" fill="none">
+              <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92z" fill="#34D186"/>
+              <path d="M16.793 9.001L6.05 2.84l9.795 9.79 1.94-1.94c.61-.61.61-1.6.001-2.21l-1.001-1.479z" fill="#FFB800"/>
+              <path d="M3 21.266c0 .353.18.683.464.872l9.578-9.508-2.85-2.85L3 21.266z" fill="#FF6B35" opacity="0.9"/>
+              <path d="M16.793 14.999l-3.001-3.001L3 22.266a1 1 0 0 0 1.05.16l12.743-7.427z" fill="currentColor" opacity="0.9"/>
+            </svg>
+            <div class="app-btn-text">
+              <div class="app-btn-label">Stáhnout na</div>
+              <div class="app-btn-store">Google Play</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="app-rating">
+          <span class="app-rating-stars">★★★★★</span>
+          <span>Hodnoceno zákazníky · Tisíce stažení</span>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; align-items: center; min-height: 200px;">
+        <div style="position: relative; width: min(220px, 70vw); aspect-ratio: 1/2; perspective: 1000px;">
+          <div style="width: 100%; height: 100%; background: linear-gradient(145deg, #1a2220, #0a0e0d); border-radius: 38px; border: 6px solid #2a302e; padding: 8px; box-shadow: -10px 20px 40px rgba(0,0,0,0.7), 0 0 60px rgba(52, 209, 134, 0.25); transform: rotateY(8deg) rotateX(4deg) rotateZ(2deg);">
+            <div style="width: 100%; height: 100%; background: #050807; border-radius: 30px; overflow: hidden; display: flex; flex-direction: column;">
+              <div style="height: 20px; background: #050807; display: flex; justify-content: center; align-items: center;">
+                <div style="width: 60px; height: 16px; background: #050807; border-radius: 100px;"></div>
+              </div>
+              <div style="padding: 4px 16px 8px; display: flex; justify-content: space-between; font-size: 10px; font-family: 'Geist Mono', monospace; color: white;">
+                <span>9:41</span>
+                <span style="color: var(--accent); font-weight: 600;">RB Taxi</span>
+                <span>●●●</span>
+              </div>
+              <div style="flex: 1; padding: 12px; display: flex; flex-direction: column; gap: 10px; background: #0a1816;">
+                <div style="background: var(--accent); color: var(--bg); padding: 12px; border-radius: 12px; font-size: 11px; font-weight: 700; text-align: center;">
+                  OBJEDNAT TAXI
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 10px; font-size: 9px; color: white;">
+                  <div style="color: var(--ink-mute); font-size: 8px; text-transform: uppercase; letter-spacing: 0.1em;">ODKUD</div>
+                  <div style="font-weight: 600; margin-top: 2px;">Národní třída 25</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 10px; font-size: 9px; color: white;">
+                  <div style="color: var(--ink-mute); font-size: 8px; text-transform: uppercase; letter-spacing: 0.1em;">KAM</div>
+                  <div style="font-weight: 600; margin-top: 2px;">Letiště Vídeň</div>
+                </div>
+                <div style="background: rgba(52, 209, 134, 0.12); border: 1px solid rgba(52, 209, 134, 0.3); padding: 10px; border-radius: 10px; font-size: 9px; color: white; display: flex; justify-content: space-between; align-items: center;">
+                  <div>
+                    <div style="color: var(--ink-mute); font-size: 8px; text-transform: uppercase; letter-spacing: 0.1em;">CENA</div>
+                    <div style="font-weight: 700; color: var(--accent); font-size: 14px; margin-top: 2px;">1 890 Kč</div>
+                  </div>
+                  <div style="text-align: right;">
+                    <div style="color: var(--ink-mute); font-size: 8px; text-transform: uppercase; letter-spacing: 0.1em;">ČAS</div>
+                    <div style="font-weight: 700; font-size: 11px; margin-top: 2px;">~ 65 min</div>
+                  </div>
+                </div>
+                <div style="margin-top: auto; background: var(--ink); color: var(--bg); padding: 12px; border-radius: 12px; font-size: 11px; font-weight: 700; text-align: center;">
+                  POTVRDIT JÍZDU
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1851,7 +2095,7 @@
   <h2>Potřebujete jet teď?</h2>
   <p>Bez aplikací, bez registrace, bez čekání.</p>
   <a href="tel:+420777702702" class="big-phone">777&nbsp;702&nbsp;702</a>
-  <div class="big-cta-secondary">NEBO ZÁLOŽNÍ <a href="tel:+420723723229">723&nbsp;723&nbsp;229</a></div>
+  <div class="big-cta-secondary">NEBO ZÁLOŽNÍ <a href="tel:+420723723229">723&nbsp;723&nbsp;229</a> · NEBO STÁHNĚTE <a href="https://apps.apple.com/cz/app/rb-taxi-hodon%C3%ADn/id1512733655" target="_blank" rel="noopener">APLIKACI</a></div>
 </div>
 
 <section class="reveal">
@@ -1944,6 +2188,15 @@
           <span class="phone-item-num" style="font-size:11px;">info@rbgroup.cz</span>
         </a>
       </div>
+    </div>
+
+    <div class="footer-section">
+      <h5>Mobilní aplikace</h5>
+      <ul>
+        <li><a href="https://apps.apple.com/cz/app/rb-taxi-hodon%C3%ADn/id1512733655" target="_blank" rel="noopener">App Store (iOS)</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=cz.esol.RbTaxi" target="_blank" rel="noopener">Google Play (Android)</a></li>
+        <li><a href="https://rbweb.esol.cz/" target="_blank" rel="noopener">Online rezervace v prohlížeči</a></li>
+      </ul>
     </div>
 
     <div class="footer-section">
